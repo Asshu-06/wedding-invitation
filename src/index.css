@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #120008;
+  color: #f5e6d0;
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 320px;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Hard reset Vite default root */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: unset !important;
+  border: none !important;
+  min-height: 100vh;
+  display: block !important;
+}
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+
+/* Gold divider */
+.gold-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 0 auto;
+}
+
+/* Section separator line */
+.section-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Section highlight reveal */
+.section-highlight {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1), box-shadow 0.85s ease;
+}
+.section-highlight.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glow pulse on section entry */
+@keyframes sectionGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+  40%  { box-shadow: 0 0 60px 20px rgba(212,175,55,0.13); }
+  100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+}
+.section-glow {
+  animation: sectionGlow 1.4s ease forwards;
+}
+
+/* ECG animation */
+@keyframes ecg {
+  0%   { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+.ecg-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: ecg 2s ease-in-out forwards;
+}
+
+/* Floating particles */
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Scroll-to-top */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(184,134,11,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.scroll-top-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(184,134,11,0.5);
+}
+
+/* On mobile, background-attachment:fixed doesn't work on iOS — fall back to scroll */
+@media (max-width: 1024px) {
+  [style*="background-attachment: fixed"],
+  [style*="background-attachment:fixed"] {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+}
+
+/* Parallax background layer (legacy, kept for reference) */
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
