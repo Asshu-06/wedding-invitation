@@ -17,7 +17,6 @@ import ParallaxDivider from './components/ParallaxDivider'
 import fixedbgone from './assets/fixedbgone.jpeg'
 import fixedbgtwo from './assets/fixedbgtwo.jpeg'
 import fixedbgthree from './assets/fixedbgthree.jpeg'
-import fixedbgfour from './assets/fixedbgfour.jpeg'
 
 function MainApp() {
   // stage: 'gate' | 'splash' | 'main'
@@ -207,7 +206,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <EventDetails />
-            <ParallaxDivider image={fixedbgfour} height="400px">
+            <ParallaxDivider image="/hero.jpeg" height="400px">
               <div style={{ textAlign: 'center' }}>
                 <p className="font-cormorant" style={{ color: '#e8d5b0', fontSize: 'clamp(1.1rem,3vw,1.6rem)', fontStyle: 'italic', letterSpacing: '0.05em' }}>
                   "Two hearts, one journey"
@@ -225,7 +224,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <RelativesInvite />
-            <ParallaxDivider image={fixedbgtwo} height="380px">
+            <ParallaxDivider image="/new.PNG" height="380px">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"/>
