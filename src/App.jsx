@@ -215,7 +215,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <LoveLetter />
-            <ParallaxDivider image={fixedbgone} height="380px">
+            <ParallaxDivider image="/boy.jpeg" height="380px">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 40 36" width="36" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M20 34C20 34 2 22 2 11C2 5.5 6.5 2 11 2C14.5 2 17.5 4 20 7C22.5 4 25.5 2 29 2C33.5 2 38 5.5 38 11C38 22 20 34 20 34Z"/>
